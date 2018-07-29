@@ -1,0 +1,9 @@
+{{friendsList}}
+
+<ul>
+  <li *ngFor="let friend of friendsList;let i=index" (click)="setSelectedFriend(friend)" [class.selected]="selectedFriend === friend">    
+    {{friend}}
+  </li>
+</ul>
+
+<span ngClass="displaySelected">Selected Friend is : {{selectedFriend}}</span>

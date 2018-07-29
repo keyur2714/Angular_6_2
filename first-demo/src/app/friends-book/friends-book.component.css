@@ -1,0 +1,15 @@
+ul{
+    background: yellowgreen;
+}
+li{
+    color: blueviolet;         
+}
+.selected{
+    background: paleturquoise;
+    display: block;
+}
+.displaySelected{
+    background: burlywood;
+    color: brown;
+    border: 1px solid red;    
+}
