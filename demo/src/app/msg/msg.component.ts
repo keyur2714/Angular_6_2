@@ -9,7 +9,9 @@ export class MsgComponent implements OnInit {
 
   msg : string = "Hello Good Morning...!";
 
-  constructor() { }
+  constructor() { 
+    console.log("Msg Component Object is Created...!");
+  }
 
   ngOnInit() {
   }

@@ -3,16 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MsgComponent } from './msg/msg.component';
+import { FriendsComponent } from './friends/friends.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    MsgComponent
+    AppComponent, 
+    MsgComponent,
+    FriendsComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
-  bootstrap: [MsgComponent]
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(){
+    console.log("App Module Loaded...!");
+  }
+}

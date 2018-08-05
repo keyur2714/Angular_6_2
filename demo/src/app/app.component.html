@@ -1,4 +1,17 @@
 <h1>
 {{title}}
 </h1>
-<app-msg></app-msg>
+<app-msg></app-msg> 
+<hr/>
+<app-friends></app-friends>
+<hr/>
+<app-employee></app-employee>
+<hr/>
+<select class="form-control" (change)="setCountryValue(country.value)" #country>
+    <option value="-1">
+        -:Select Country:-
+    </option>
+    <option value="IND">India</option>
+    <option value="US">USA</option>
+    <option value="FR">France</option>
+</select>

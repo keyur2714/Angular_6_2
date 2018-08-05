@@ -1,0 +1,27 @@
+
+<label>Employee Name: </label><input type=text class="form-control" name="empName" #empName/>
+<button class="btn btn-info" (click)="addNewEmployee(empName.value)">Add New Employee</button>
+<table class="table table-stripped">
+  <tr>
+    <th>Name</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let emp of employeeNameList;let i=index" (click)="setSelected(emp)" [class.selected]="emp === selectedEmoloyee">
+    <td>
+        {{emp}}  
+    </td>
+    <td>
+      <button (click)="deleteEmployee(i)">Delete</button>
+    </td>
+  </tr>
+</table>
+<div>
+  selected Employee is : {{selectedEmoloyee}}
+</div>
+
+<hr/>
+<ul >
+  <li *ngFor="let employee of employeeList">
+    {{employee.name}}
+  </li>
+</ul>
