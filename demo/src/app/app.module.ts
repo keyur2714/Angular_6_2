@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { MsgComponent } from './msg/msg.component';
 import { FriendsComponent } from './friends/friends.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { NumberComponent } from './number/number.component';
 
 @NgModule({
   declarations: [
     AppComponent, 
     MsgComponent,
     FriendsComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    NumberComponent
   ],
   imports: [
     BrowserModule

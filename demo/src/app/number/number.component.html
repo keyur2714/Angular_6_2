@@ -1,0 +1,11 @@
+<label ngClass="myLabel">Number1</label>
+<input class="form-control" type="number" name=num1 #num1 />
+<label ngClass="myLabel">Number2</label>
+<input class="form-control" type="number" name=num2 #num2 />
+<button (click)="add(num1.value,num2.value)">+</button>
+<hr/>
+<div *ngIf="result !== 0">
+Result is : {{result}}
+</div>
+
+
