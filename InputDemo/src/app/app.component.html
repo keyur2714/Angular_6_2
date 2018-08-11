@@ -1,5 +1,11 @@
 <h1>@InputDemo</h1>
 
+<input type="text" name="name" [(ngModel)]="name"/>
+{{name}}
+
+<button (click)="reverseStr()">Reverse String</button>
+<hr/>
+<p>Reverse String is : {{revStr}}</p>
 <app-menu-item-list>
 </app-menu-item-list>
 
