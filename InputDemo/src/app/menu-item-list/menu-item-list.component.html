@@ -1,0 +1,20 @@
+<!-- <table class="table table-striped">
+  <tr>
+    <th>Id</th>
+    <th>Item Code</th>
+    <th>Desc</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let menuItem of menuItemList">
+    <td>{{menuItem.id}}</td>
+    <td>{{menuItem.itemCode}}</td>
+    <td>{{menuItem.itemDesc}}</td>
+    <td>{{menuItem.unitPrice}}</td>
+  </tr>
+</table> -->
+<app-mydatagrid 
+    [dataList]="menuItemList"
+    [columnHeaderList]="headerList"
+    [columnList]="columnList"
+>
+</app-mydatagrid>

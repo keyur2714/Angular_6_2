@@ -1,0 +1,18 @@
+<h1>@InputDemo</h1>
+
+<app-menu-item-list>
+</app-menu-item-list>
+
+<app-message [msg]="'Hello Radhe Krishna...!'">
+</app-message>
+
+
+<app-message [msg]="message" [messageType]="'info'">
+</app-message>
+
+
+<app-message [msg]="'Sorry Please Try Again..!'" [messageType]="'error'">
+</app-message>
+
+<app-message *ngFor="let m of msgList" [msg]="m">
+</app-message>
