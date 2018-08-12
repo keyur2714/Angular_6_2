@@ -1,0 +1,7 @@
+<label>{{label}} : </label>
+<select name="dropdown" [(ngModel)]="selectedData" (change)="getSelectedData()">
+  <option value="-1">{{placeHolder}}</option>
+  <option *ngFor="let data of dataList" [ngValue]="data">
+    {{data.name}}
+  </option>
+</select>

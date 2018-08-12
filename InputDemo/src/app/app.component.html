@@ -1,5 +1,31 @@
 <h1>@InputDemo</h1>
 
+<app-country></app-country>
+<hr/>
+
+
+<app-my-dropdown 
+[label]="'Select Country'"
+[placeHolder]="'-:Select Country:-'"
+[dataList]="countryLookupList"
+(getSelectedData)="setSelectedCountry($event)"
+>    
+</app-my-dropdown>
+
+Selected Country : {{selectedCountry.name}}
+<hr/>
+
+<app-my-dropdown 
+[label]="'Select State : '"
+[placeHolder]="'-:Select State:-'"
+[dataList]="stateLookupList"
+(getSelectedData)="setSelectedState($event)"
+>    
+</app-my-dropdown>
+
+Selected State : {{selectedState.name}}
+<hr/>
+
 <input type="text" name="name" [(ngModel)]="name"/>
 {{name}}
 
