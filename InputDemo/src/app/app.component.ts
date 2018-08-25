@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { Lookup } from './my-dropdown/lookup-model';
+import { Server } from './server/server.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,6 +19,19 @@ export class AppComponent implements OnInit{
 
   name: string = "keyur";
   revStr: string = '';
+
+  serverHeaderList: string[] = ["Server Name","Server OS"];
+  serverColumnList: string[] = ["serverName","serverOs"];
+  serverList: Server[] = [
+    {
+      serverName : "Server 1",
+      serverOs: "Windows"
+    },
+    {
+      serverName : "Server 2",
+      serverOs: "Linux"
+    }
+  ];
 
   ngOnInit(){
     const countryLookup1 = new Lookup();
@@ -79,5 +93,10 @@ export class AppComponent implements OnInit{
 
   setSelectedCountry(country){
     this.selectedCountry = country;
+  }
+
+  addServerToList(server){
+    console.log("2: "+server); 
+    this.serverList.push(server);   
   }
 }

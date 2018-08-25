@@ -8,6 +8,8 @@ import { MydatagridComponent } from './mydatagrid/mydatagrid.component';
 import { MenuItemListComponent } from './menu-item-list/menu-item-list.component';
 import { CountryComponent } from './country/country.component';
 import { MyDropdownComponent } from './my-dropdown/my-dropdown.component';
+import { ServerComponent } from './server/server.component';
+import { ServerDetailComponent } from './server-detail/server-detail.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { MyDropdownComponent } from './my-dropdown/my-dropdown.component';
     MydatagridComponent,
     MenuItemListComponent,
     CountryComponent,
-    MyDropdownComponent
+    MyDropdownComponent,
+    ServerComponent,
+    ServerDetailComponent
   ],
   imports: [
     BrowserModule,

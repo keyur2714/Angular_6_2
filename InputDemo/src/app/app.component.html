@@ -1,5 +1,23 @@
 <h1>@InputDemo</h1>
 
+
+<hr/>
+<app-server (getServer)="addServerToList($event)">
+Add    
+</app-server>
+<hr/>
+<app-server-detail *ngFor="let server of serverList">
+    Server Name : {{server.serverName}}
+    Server Os : {{server.serverOs}}
+</app-server-detail>
+<hr/>
+<app-mydatagrid 
+    [dataList]="serverList"
+    [columnHeaderList]="serverHeaderList"
+    [columnList]="serverColumnList"
+>
+</app-mydatagrid>
+<hr/>
 <app-country></app-country>
 <hr/>
 
