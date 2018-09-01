@@ -1,0 +1,17 @@
+<h1>Structural Directive Demo</h1>
+
+<div *appMyIf="true">
+  Hello Radhe Krishna...!
+</div>
+
+<ng-template [appMyIf]="false">
+  Good Morning
+</ng-template>
+
+<ng-template [ngIf]="true">
+  Good Morning
+</ng-template>
+
+<span *appMyLoop="7">
+  Hello
+</span>

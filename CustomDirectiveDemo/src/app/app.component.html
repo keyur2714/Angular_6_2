@@ -1,0 +1,25 @@
+
+Select Color: 
+<select name="color" (change)="changeColor(color.value)" #color>
+    <option value="-1">-:Select Color:-</option>
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="pink">Pink</option>
+    <option value="green">Green</option>
+    <option value="beige">beige</option>
+    <option value="cyan">cyan</option>
+</select>
+
+<h1 appMyElementStyle>
+  Directive Demo
+</h1>
+
+
+<h3 appMyElementStyle [color]="'green'">
+  One More
+</h3>
+
+<h1 appMyElementStyle [color]="myColor" [fontSize]="'35px'">
+  Two More
+</h1>
+

@@ -2,13 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NumberComponent } from './number/number.component';
-import { NumberUtilComponent } from './number/number-util.component';
+import { MyIfDirective } from './my-if.directive';
+import { MyLoopDirective } from './my-loop.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
-    NumberComponent,
-    NumberUtilComponent
+    MyIfDirective,
+    MyLoopDirective
   ],
   imports: [
     BrowserModule

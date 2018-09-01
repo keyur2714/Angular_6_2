@@ -1,7 +1,11 @@
 <input type=text #num1 />
 <input type=text #num2 />
-<button (click)="add()">Add</button>
+<button (click)="add()">+</button>
+<button (click)="sub()">-</button>
+<button (click)="div()">/</button>
+<button (click)="mul()">*</button>
 <h1 #h>
   Result Is : {{result}}
 </h1>
+<app-number-util></app-number-util>
 
