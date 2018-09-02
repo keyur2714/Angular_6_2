@@ -1,0 +1,21 @@
+<h1>{{title | uppercase }}</h1>
+
+<h1>{{title | lowercase }}</h1>
+
+<h2>{{date | date : 'dd/MM/yyyy hh:mm:ss a'}}</h2>
+
+<pre>
+{{person | json}}
+</pre>
+
+<h3>{{person.name | welcome : 'M' }}</h3>
+
+<h3>{{name | welcome : 'F' }}</h3>
+
+<h2>{{accountNumber | formateString: 4 : 'test'| welcome : 'M'}}</h2>
+
+<ul>
+    <li *ngFor="let status of statusList">
+        <span [class]="status|statusconvert">{{status | lowercase}}</span>
+    </li>
+</ul>
