@@ -1,4 +1,62 @@
+<p *ngIf="statusCode === 201">
+  Product Save Successfully...!
+</p>
+<p *ngIf="statusCode === 200">
+  Product Updated Successfully...!
+</p>
+<p *ngIf="statusCode === 204">
+  Product Deleted Successfully...!
+</p>
+<p *ngIf="statusCode === 500">
+  Failed in Save or Update Product!
+</p>
 <table>
+  <tr>
+    <td>Product Id : </td>
+    <td><input type=text name=id [(ngModel)]="product.id" [readOnly]="isUpdate"/></td>
+  </tr>
+  <tr>
+    <td>Code : </td>
+    <td><input type=text name=code [(ngModel)]="product.code" /></td>
+  </tr>
+  <tr>
+    <td>Description : </td>
+    <td><input type=text name=description [(ngModel)]="product.description" /></td>
+  </tr>
+  <tr>
+    <td>Unit Price : </td>
+    <td><input type=text name=unitPrice [(ngModel)]="product.unitPrice" /></td>
+  </tr>
+  <tr>
+    <td>Warranty : </td>    
+    <td *ngIf="product.warranty === 'Y'">
+      <input type="checkbox" name=warranty [(ngModel)]="product.warranty" checked/>
+    </td>
+    <td *ngIf="product.warranty === 'N'">      
+      <input type="checkbox" name=warranty [(ngModel)]="product.warranty" />
+    </td>
+  </tr>
+  <tr>
+    <td>Color : </td>
+    <td>
+      <select name=color [(ngModel)]="product.color">
+        <option value="-1">-:Select Color:-</option>
+        <option value="BLACK">Black</option>
+        <option value="WHITE">White</option>
+        <option value="SILVER">Silver</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td *ngIf="!isUpdate">
+      <button type="button" (click)="save()">Save</button>
+    </td>
+    <td *ngIf="isUpdate">
+      <button type="button" (click)="update()">Update</button>
+    </td>
+  </tr>
+</table>
+<table border="5">
   <tr>
     <th>Product Id</th>
     <th>Code</th>
@@ -6,6 +64,7 @@
     <th>Unit Price</th>
     <th>warranty</th>
     <th>Color</th>
+    <th>Action</th>   
   </tr>
   <tr *ngFor="let product of productList"> 
     <td>{{product.id}}</td>
@@ -14,5 +73,9 @@
     <td>{{product.unitPrice}}</td>
     <td>{{product.warranty}}</td>
     <td>{{product.color}}</td>
+    <td>
+      <button (click)="edit(product.id)">Edit</button>
+      <button (click)="delete(product.id)">Delete</button>
+    </td>
   </tr>
 </table>
