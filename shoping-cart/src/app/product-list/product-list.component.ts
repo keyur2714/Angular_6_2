@@ -21,10 +21,17 @@ export class ProductListComponent implements OnInit {
   }
 
   getProductList(){
-    this.productService.getProductService().subscribe(
+    // this.productService.getProductService().subscribe(
+    //     (data)=>{
+    //       //console.log(data.json());
+    //       this.productList = data;
+    //     }
+    // )
+
+    this.productService.getProductServicewithMap().subscribe(
         (data)=>{
-          console.log(data.json());
-          this.productList = data.json();
+          //console.log(data.json());
+          this.productList = data;
         }
     )
   }
@@ -39,15 +46,14 @@ export class ProductListComponent implements OnInit {
       console.log(this.product);
 
       this.productService.saveProduct(this.product).subscribe(
-        (response)=>{
-          console.log(response.status);
-          console.log(response.json());
-          this.statusCode = response.status;
+        (status)=>{
+          console.log(status);
+          this.statusCode = status;
           this.getProductList();
         },
         (error)=>{
           console.log(error);
-          this.statusCode = error.status;
+          this.statusCode = error;
         }
       )
     }        
