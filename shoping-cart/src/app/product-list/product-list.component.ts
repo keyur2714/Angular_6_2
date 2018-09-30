@@ -83,9 +83,9 @@ export class ProductListComponent implements OnInit {
 
       this.productService.updateProduct(this.product).subscribe(
         (response)=>{
-          console.log(response.status);
-          console.log(response.json());
-          this.statusCode = response.status;
+          //console.log(response.status);
+          //console.log(response.json());
+          this.statusCode = response;
           this.isUpdate = false;
           this.getProductList();
         },
