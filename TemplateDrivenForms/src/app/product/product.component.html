@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-header">Product Entry</div>
+  <div class="card-body">
+    <form #f="ngForm" (ngSubmit)="save(f)">
+      <div class="row">
+        <div class="col-md-2">
+          <label>Code: <sup>*</sup>:</label>
+        </div>
+        <div class="col-md-4">
+          <input type=text name=code class="form-control" [(ngModel)]="product.code" required #code=ngModel />
+          <span *ngIf="code.invalid && code.touched">Code is Required Field</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label>Description: <sup>*</sup>:</label>
+        </div>
+        <div class="col-md-4">
+          <input type=text name=desc class="form-control" [(ngModel)]="product.desc" required #desc=ngModel minlength="5"/>
+          <div *ngIf="desc.errors">
+            <span *ngIf="desc.invalid && desc.touched && desc.errors['required']">Description is Required Field</span>
+            <span *ngIf="desc.invalid && desc.touched && desc.errors['minlength']">Description Min 5 cHANR Field</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <label>Unit Price: <sup>*</sup>:</label>
+        </div>
+        <div class="col-md-4">
+          <input type=text name=unitPrice class="form-control" [(ngModel)]="product.unitPrice" required #unitPrice=ngModel />
+          <span *ngIf="unitPrice.invalid && unitPrice.touched">Unit Price is Required Field</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <button class="btn btn-primary" [disabled]="f.invalid">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="card-footer" *ngIf="isValidProduct">  
+    Product Code is : {{product.code}}
+  </div>
+</div>

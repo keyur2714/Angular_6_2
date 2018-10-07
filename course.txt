@@ -17,7 +17,7 @@ Component Communication	-- Done
 	Input
 	Output
 	ViewChild
--- Forms -- 
+-- Forms --  
 	1. Template Driven Forms
 	2. Reactive Forms
 ======================
@@ -29,8 +29,8 @@ Component Communication	-- Done
 -- Observable from RXJS -- Done
 	-- operators (map//catch) Done
 	-- switch map
--- HttpModule --
---JSON SERVER	 
+-- HttpModule -- Done
+--JSON SERVER -- Done	 
 -- Routing Module & Routing with --
 Lazy Loading :: -- 
 -- Aunticationn & Authorization 

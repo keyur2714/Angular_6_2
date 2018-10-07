@@ -16,7 +16,7 @@ import { LoggingService } from './services/logging.service';
     BrowserModule
   ],
   providers: [
-    {provide: IQuestion , useClass : SpringQuestion},
+    {provide: IQuestion , useClass : AngularQuestion},
     ExamService,
     LoggingService
   ],
