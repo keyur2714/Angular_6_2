@@ -1,0 +1,44 @@
+<form [formGroup]="inquiryForm" (ngSubmit)="save()">
+    <div class="row form-group">
+       <div class="col-md-3"><label><sup>*</sup>Name :</label></div>
+       <div class="col-md-6">
+         <input type="text" class="form-control" formControlName="name" />
+         <span *ngIf="inquiryForm.get('name').invalid && inquiryForm.get('name').touched">Name is Required</span>
+       </div>
+    </div>    
+    <div class="row form-group">
+       <div class="col-md-3"><label><sup>*</sup>Course :</label></div>
+       <div class="col-md-6">
+         <select formControlName="course" class="form-control" (change)="updateValidations()">
+           <option value="-1">-:Select Course:-</option>
+           <option value="ANGULAR">Angular</option>
+           <option value="JAVA">Advance Java</option>
+           <option value="MEAN">Mean Stack</option>
+         </select>
+         <span *ngIf="inquiryForm.get('course').value == -1 && inquiryForm.get('course').touched">Please select Course</span>
+       </div>
+    </div>    
+    <div class="row form-group">
+       <div class="col-md-3"><label><sup>*</sup>Mobile No :</label></div>
+       <div class="col-md-6"><input type="text" class="form-control" formControlName="mobileNo" /></div>
+       <span *ngIf="inquiryForm.get('mobileNo').invalid && inquiryForm.get('mobileNo').touched">Mobile Number is Required</span>
+    </div>    
+    <div class="row form-group">
+       <div class="col-md-3"><label><sup>*</sup>Email :</label></div>
+       <div class="col-md-6"><input type="text" class="form-control" formControlName="email" /></div>
+       <div *ngIf="inquiryForm.get('email').touched && inquiryForm.get('email').errors">
+        <span *ngIf="inquiryForm.get('email').errors['required']">Email is Required</span>
+        <span *ngIf="inquiryForm.get('email').errors['email']">Email is Invalid</span>
+       </div>
+    </div>  
+    <div class="row form-group" formArrayName="hobbies">
+      <div *ngFor="let hobbyControl of inquiryForm.get('hobbies').controls;let i=index">
+       <div class="col-md-3"><label>Hobby :</label></div>
+       <div class="col-md-4"><input type="text" class="form-control" [formControlName]="i" /></div>             
+      </div>
+      <div class="col-md-2"><button class="btn btn-info" (click)="addHobby()">Add More</button></div>      
+    </div>            
+    <div class="row form-group">
+       <div class="col-md-12"><button class="btn btn-info" [disabled]="inquiryForm.invalid">Save</button></div>      
+    </div>    
+</form>  
