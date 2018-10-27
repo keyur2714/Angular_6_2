@@ -1,12 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { Employee } from './employee.model';
 @Component({
   selector: 'app-emp-list',
   templateUrl: './emp-list.component.html',
   styleUrls: ['./emp-list.component.css']
 })
 export class EmpListComponent implements OnInit {
+
+  empList: Employee[] = [
+    {
+    "empId": 27,
+    "city": "surat",
+    "name": "keyur",
+    "deptName": "IT"
+    },
+    {
+    "empId": 32,
+    "city": "surat",
+    "name": "denish",
+    "deptName": "IT"
+    },
+    {
+    "empId": 44,
+    "city": "pune",
+    "name": "vinit",
+    "deptName": "SALES"
+    }
+];
 
   constructor(private activatedRoute : ActivatedRoute ) { }
 

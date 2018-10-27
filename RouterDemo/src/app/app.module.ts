@@ -8,6 +8,8 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { PageNotFoundComponent } from './page-not-found.component';
 import { EmpListComponent } from './emp-list/emp-list.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,18 +18,12 @@ import { EmpListComponent } from './emp-list/emp-list.component';
     AboutusComponent,
     ContactusComponent,
     PageNotFoundComponent,
-    EmpListComponent
+    EmpListComponent,
+    EmployeeDetailComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([            
-      { path: '' , redirectTo : '/home' , pathMatch : 'full'},
-      { path:'home' , component: HomeComponent},
-      { path:'empList/:id/:name', component : EmpListComponent},
-      { path:'aboutus' , component: AboutusComponent},
-      { path:'contactus' , component: ContactusComponent},
-      { path : '**' , component : PageNotFoundComponent}    
-    ])
+    AppRoutingModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
