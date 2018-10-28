@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-4">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>EmpId</th>
+          <th>Name</th>
+          <th>City</th>
+          <th>Dept</th>
+        </tr>
+      </thead>
+      <tbody>    
+          <tr *ngFor="let emp of empList">
+            <td>
+              <a [routerLink]="['empDetail',emp.empId]">{{emp.empId}}</a>                    
+            </td>
+            <td>
+              <a [routerLink]="['/employeeDetail',emp.empId]">{{emp.empId}}</a>                    
+            </td>            
+            <td>{{emp.name}}</td>
+            <td>{{emp.city}}</td>
+            <td>{{emp.deptName}}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-4">
+     <router-outlet></router-outlet>
+  </div>
+</div>
