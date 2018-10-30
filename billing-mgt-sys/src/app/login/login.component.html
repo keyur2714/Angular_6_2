@@ -1,0 +1,44 @@
+<!-- Material form login -->
+<div class="row flex-center">
+  <div class="col-md-6">
+<div class="card">
+
+  <h5 class="card-header warning-color white-text text-center py-4">
+    <strong>Sign in</strong>
+  </h5>
+
+  <!--Card content-->
+  <div class="card-body-center px-lg-5 pt-0">
+    <p>{{loginErrorMsg}}</p>      
+    <!-- Form -->
+    <form #f="ngForm" class="text-center" (ngSubmit)="login(f)" style="color: #757575;">
+
+      <!-- Email -->
+      <div class="md-form">
+        <input type="email" id="materialLoginFormEmail" class="form-control" name="email" ngModel required email>
+        <label for="materialLoginFormEmail">E-mail</label>
+      </div>
+
+      <!-- Password -->
+      <div class="md-form">
+        <input type="password" id="materialLoginFormPassword" class="form-control" name="password" ngModel required minlength="8">
+        <label for="materialLoginFormPassword">Password</label>
+      </div>      
+
+      <!-- Sign in button -->
+      <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit" [disabled]="f.invalid">Sign in</button>
+
+      <!-- Register -->
+      <p>Not a member?
+        <a href="">Register</a>
+      </p>
+
+    </form>
+    <!-- Form -->
+
+  </div>
+
+</div>
+</div>
+</div>
+<!-- Material form login -->

@@ -20,12 +20,32 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api routes -- Server/BackEnd Rest API Request
 //if /api in url then route it to api.js
+
+var mysql = require('mysql');
+var con = mysql.createConnection({
+  host: "localhost",
+  database: "nodemysql",
+  user: "root",
+  password: "admin"
+});
+
+
+
 app.use('/api', 
     router.get('/', (req, res) => {
         res.send('Hello Radhe Krishna From BackEnd...!');
     }),
     router.get('/getStudentList', (req, res) => {
         res.send('Get Student List');
+    }),
+    router.get('/customers',(req,res) => {        
+        con.connect(function(err) {
+            if (err) throw err;
+            con.query("SELECT * FROM customers", function (err, result, fields) {
+            if (err) throw err;
+            res.send(result);
+            });
+        });
     })
 );
 

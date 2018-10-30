@@ -31,8 +31,7 @@ Component Communication	-- Done
 	-- switch map
 -- HttpModule -- Done
 --JSON SERVER -- Done	 
--- Routing Module & Routing with --
-Lazy Loading :: -- 
+-- Routing Module & Routing with --Lazy Loading :: -- Done
 -- Aunticationn & Authorization 
 	-- Http Interceptor --
 	-- JWT  --

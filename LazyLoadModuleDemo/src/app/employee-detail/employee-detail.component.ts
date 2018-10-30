@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-employee-detail',
@@ -9,7 +10,7 @@ export class EmployeeDetailComponent implements OnInit {
 
   empId : string = '';
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute,private location:Location) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(
@@ -20,4 +21,7 @@ export class EmployeeDetailComponent implements OnInit {
     )
   }
 
+  back(){
+    this.location.back();
+  }
 }

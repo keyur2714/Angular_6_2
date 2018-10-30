@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-6">
+    <button class="btn btn-warning" (click)="addNew()">Add</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <table id="dtBasicExample" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th class="th-sm">Sr.No
+            <i class="fa fa-sort float-right" aria-hidden="true"></i>
+          </th>
+          <th class="th-sm">Item Code
+            <i class="fa fa-sort float-right" aria-hidden="true"></i>
+          </th>
+          <th class="th-sm">Description
+            <i class="fa fa-sort float-right" aria-hidden="true"></i>
+          </th>
+          <th class="th-sm">Price
+            <i class="fa fa-sort float-right" aria-hidden="true"></i>
+          </th>      
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let menuItem of menuItemList">
+          <td>
+            <a [routerLink]="['menuItemDetail',menuItem.id]" [routerLinkActive]="'active'">{{menuItem.id}}</a>
+          </td>
+          <td>{{menuItem.code}}</td>
+          <td>{{menuItem.desc}}</td>
+          <td>{{menuItem.unitPrice}}</td>      
+        </tr> 
+      </tbody>  
+    </table>
+  </div>
+  <div class="col-lg-6">
+    <router-outlet></router-outlet>
+  </div>
+</div>
