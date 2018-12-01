@@ -10,6 +10,7 @@ const routes : Routes = [
         path:'', 
         component : EmpListComponent,
         canActivate : [AuthGuard],
+        data: [{ staticData : 'Hello' }],
         children : [
           {
             path : 'empDetail/:empId' , component : EmployeeDetailComponent

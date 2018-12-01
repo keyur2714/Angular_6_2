@@ -18,5 +18,9 @@ export class AppComponent {
     name: "keyur",
     city: "surat",
     mobileNo: "7387029671"
-  };  
+  }; 
+  
+  add(num1,num2):number{
+    return num1+num2;
+  }
 }

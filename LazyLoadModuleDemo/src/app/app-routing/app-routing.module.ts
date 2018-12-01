@@ -23,7 +23,7 @@ const routes : Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(routes,
-      {preloadingStrategy : PreloadAllModules}
+      {preloadingStrategy : NoPreloading}
     ),    
   ],
   exports: [

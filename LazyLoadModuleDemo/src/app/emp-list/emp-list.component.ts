@@ -32,7 +32,8 @@ export class EmpListComponent implements OnInit {
   constructor(private activatedRoute : ActivatedRoute ) { }
 
   ngOnInit() {
-    //getting path parameters using params
+    console.log(this.activatedRoute.snapshot.data[0].staticData);
+    //getting path parameters using params    
     this.activatedRoute.params.subscribe(
       (param)=>{
         console.log(param);
