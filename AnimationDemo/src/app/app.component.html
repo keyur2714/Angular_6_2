@@ -1,0 +1,16 @@
+<h1>Animation Demo</h1>
+<button (click)="toggleState()">Toggle State</button>
+<p></p>
+<div [@stateTrigger]="state" style="width:100px;height:100px;">
+</div>
+
+<hr/>
+
+<table border=5 align="center">
+      <tr>
+        <th>Names</th>
+      </tr>
+      <tr *ngFor="let name of friendsName" [@onOff2Trigger]="onOffState" (click)="toggleRowState()">
+        <td>{{name}}</td>
+      </tr>
+  </table>
